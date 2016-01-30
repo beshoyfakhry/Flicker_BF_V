@@ -21,6 +21,8 @@ import java.util.List;
 import java.util.Map;
 
 import com.beshoy.view.Flickr.AppController;
+
+import Helper.utils.ApplicationDialogs;
 import Helper.utils.Const;
 
 /**
@@ -52,6 +54,12 @@ public class VolleyConnection {
     }
 
     public void connect() {
+        if(!ApplicationDialogs.isConnectionOn(activity))
+        {
+            ApplicationDialogs.showToast(activity);
+        }
+        else{
+
         JSONObject o = new JSONObject();
         Map<String, Object> mm;
         StringBuffer sb=new StringBuffer();
@@ -100,7 +108,7 @@ public class VolleyConnection {
         });
         AppController.getInstance().addToRequestQueue(sr,
                 tagJsonObject);
-    }
+    }}
 
     public Map<String, Object> parseJSONObjectToMap(JSONObject jsonObject) throws JSONException {
         Map<String, Object> mapData = new HashMap<String, Object>();

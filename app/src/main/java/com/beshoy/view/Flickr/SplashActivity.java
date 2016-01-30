@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import Helper.utils.ApplicationDialogs;
 
 
 /**
@@ -23,7 +24,7 @@ public class SplashActivity extends Activity {
 		startAction();
 	}
 	private void startAction() {
-
+		if (ApplicationDialogs.isConnectionOn(this)) {
 
 			new Handler().postDelayed(new Runnable() {
 				@Override
@@ -35,4 +36,8 @@ public class SplashActivity extends Activity {
 				}
 			}, SPLASH_DISPLAY_LENGTH);
 		}
-}
+ 		else
+		{
+			ApplicationDialogs.showToast(this);
+		}
+	}}
