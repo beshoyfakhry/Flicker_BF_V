@@ -12,6 +12,7 @@ import java.util.ArrayList;
 public class PhotoResponseObject {
 
 private String Hello;
+    private int Eman;
     private int  page;
 
     private String  pages;
