@@ -7,7 +7,7 @@ package com.beshoy.Beans;
  * @contact 01221231268
  */
 public class PhotoObject {
-
+    private String id2;
             private String id;
     private String  owner;
     private String  secret;
